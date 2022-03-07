@@ -14,7 +14,6 @@ interface IGameStatus {
 }
 
 function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost, balanceOverflow, loading }: IGameStatus) {
-  console.log(loading);
   if (loading) {
     return <p>Calculating...</p>;
   }
@@ -39,7 +38,12 @@ function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost,
     return (
       <div className={styles.winText}>
         <>
-          <div className={styles.winnerChoice}>{winnerChoice.map((choice) => choice.name)} won</div>
+          <div className={styles.winnerChoice}>
+            {winnerChoice.map((choice) => (
+              <span key={choice.name}>{choice.name}</span>
+            ))}
+            &nbsp;won
+          </div>
           <div>You win: {wonValue}</div>
         </>
       </div>
@@ -52,7 +56,10 @@ function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost,
         <span className={styles.choice}>{computerChoice.name}</span> vs&nbsp;
         {notZeroBets.map((bets) => (
           <>
-            <span className={styles.choice}>{bets.name}</span>&nbsp;
+            <span key={bets.id} className={styles.choice}>
+              {bets.name}
+            </span>
+            &nbsp;
           </>
         ))}
       </div>
