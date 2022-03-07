@@ -10,9 +10,15 @@ interface IGameStatus {
   notZeroBets: IPosition[];
   lost: boolean;
   balanceOverflow: boolean;
+  loading: boolean;
 }
 
-function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost, balanceOverflow }: IGameStatus) {
+function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost, balanceOverflow, loading }: IGameStatus) {
+  console.log(loading);
+  if (loading) {
+    return <p>Calculating...</p>;
+  }
+
   if (lost) {
     return (
       <div className={styles.lossText}>
