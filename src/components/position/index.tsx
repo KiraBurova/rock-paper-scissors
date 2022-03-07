@@ -9,15 +9,18 @@ import styles from './styles.module.scss';
 export interface IPositionProps {
   position: IPosition;
   totalValueOfBets: number;
+  onBalanceOverflow: Function;
 }
 
-function Position({ position, totalValueOfBets }: IPositionProps) {
+function Position({ position, totalValueOfBets, onBalanceOverflow }: IPositionProps) {
   const dispatch = useDispatch();
   const balance = useSelector((state: RootState) => state.balance);
 
   const handleAddBet = (id: number) => () => {
     if (totalValueOfBets < balance) {
       dispatch(addBet(id));
+    } else {
+      onBalanceOverflow();
     }
   };
   return (

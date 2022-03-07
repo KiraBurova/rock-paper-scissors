@@ -23,6 +23,7 @@ function App() {
   const [computerChoice, setComputerChoice] = useState<IPosition | null>(null);
   const [winnerChoice, setWinnerChoice] = useState<IPosition[] | null>(null);
   const [lost, setLost] = useState(false);
+  const [balanceOverflow, setBalanceOverflow] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleStartGame = () => {
@@ -58,14 +59,18 @@ function App() {
     }, 1000);
   };
 
+  const handleBalanceOverflow = () => {
+    setBalanceOverflow(true);
+  };
+
   return (
     <div className={styles.field}>
       <Header totalValueOfBets={totalValueOfBets} wonValue={wonValue} />
       <div className={styles.fieldInner}>
-        <GameStatus computerChoice={computerChoice} winnerChoice={winnerChoice} wonValue={wonValue} lost={lost} notZeroBets={notZeroBets} />
+        <GameStatus computerChoice={computerChoice} winnerChoice={winnerChoice} wonValue={wonValue} lost={lost} notZeroBets={notZeroBets} balanceOverflow={balanceOverflow} />
         <div className={styles.positions}>
           {allBets.map((position) => (
-            <Position key={position.id} position={position} totalValueOfBets={totalValueOfBets} />
+            <Position key={position.id} position={position} totalValueOfBets={totalValueOfBets} onBalanceOverflow={handleBalanceOverflow} />
           ))}
         </div>
         <button disabled={loading} className={styles.button} onClick={handleStartGame}>

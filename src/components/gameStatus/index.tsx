@@ -9,13 +9,22 @@ interface IGameStatus {
   computerChoice: IPosition | null;
   notZeroBets: IPosition[];
   lost: boolean;
+  balanceOverflow: boolean;
 }
 
-function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost }: IGameStatus) {
+function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost, balanceOverflow }: IGameStatus) {
   if (lost) {
     return (
       <div className={styles.lossText}>
         <div>You lost</div>
+      </div>
+    );
+  }
+
+  if (balanceOverflow) {
+    return (
+      <div className={styles.lossText}>
+        <div>Can not add more than balance</div>
       </div>
     );
   }
