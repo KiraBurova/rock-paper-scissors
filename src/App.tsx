@@ -73,6 +73,7 @@ function App() {
     <div className={styles.field}>
       <Header totalValueOfBets={totalValueOfBets} wonValue={wonValue} />
       <div className={styles.fieldInner}>
+        {loading && <p>Calculating...</p>}
         <GameStatus computerChoice={computerChoice} winnerChoice={winnerChoice} wonValue={wonValue} lost={lost} notZeroBets={notZeroBets} balanceOverflow={balanceOverflow} />
         <div className={styles.positions}>
           {allBets.map((position) => (
