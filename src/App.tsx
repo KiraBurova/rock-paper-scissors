@@ -6,7 +6,7 @@ import Header from './components/header';
 import Position from './components/position';
 import { POSITIONS } from './constants';
 
-import { decreaseBalance, increaseBalance, resetBets, RootState } from './store';
+import { decreaseBalance, increaseBalance, resetBets, resetWonValue, RootState } from './store';
 import { getNumberOfBets, getNotZeroBets, getTotalValueOfBets } from './store/selectors';
 
 import styles from './styles.module.scss';
@@ -53,6 +53,7 @@ function App() {
   const handleLoss = () => {
     setTimeout(() => {
       dispatch(decreaseBalance(totalValueOfBets));
+      dispatch(resetWonValue());
       setLost(true);
       setLoading(false);
       handleResetGame();
@@ -79,7 +80,7 @@ function App() {
           ))}
         </div>
         <div>
-          <button disabled={loading} className={styles.playButton} onClick={handleStartGame}>
+          <button disabled={loading || !numberOfBets} className={styles.playButton} onClick={handleStartGame}>
             Play
           </button>
           <button className={styles.resetButton} onClick={handleResetGame}>

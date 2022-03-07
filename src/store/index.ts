@@ -36,12 +36,14 @@ const betSlice = createSlice({
     },
     resetBets: (state) => {
       state.allBets = POSITIONS;
+    },
+    resetWonValue: (state) => {
       state.wonValue = 0;
     },
   },
 });
 
-export const { addBet, decreaseBalance, increaseBalance, resetBets } = betSlice.actions;
+export const { addBet, decreaseBalance, increaseBalance, resetBets, resetWonValue } = betSlice.actions;
 
 export const store = configureStore({
   reducer: betSlice.reducer,
