@@ -15,7 +15,7 @@ import { IPosition } from './types';
 function App() {
   const dispatch = useDispatch();
   const allBets = useSelector((state: RootState) => state.allBets);
-  const wonAmount = useSelector((state: RootState) => state.wonAmount);
+  const wonValue = useSelector((state: RootState) => state.wonValue);
   const totalValueOfBets = useSelector((state: RootState) => getTotalValueOfBets(state));
   const numberOfBets = useSelector((state: RootState) => getNumberOfBets(state));
   const notZeroBets = useSelector((state: RootState) => getNotZeroBets(state));
@@ -60,9 +60,9 @@ function App() {
 
   return (
     <div className={styles.field}>
-      <Header totalValueOfBets={totalValueOfBets} />
+      <Header totalValueOfBets={totalValueOfBets} wonValue={wonValue} />
       <div className={styles.fieldInner}>
-        <GameStatus computerChoice={computerChoice} winnerChoice={winnerChoice} wonAmount={wonAmount} lost={lost} notZeroBets={notZeroBets} />
+        <GameStatus computerChoice={computerChoice} winnerChoice={winnerChoice} wonValue={wonValue} lost={lost} notZeroBets={notZeroBets} />
         <div className={styles.positions}>
           {allBets.map((position) => (
             <Position key={position.id} position={position} totalValueOfBets={totalValueOfBets} />

@@ -7,7 +7,7 @@ const betSlice = createSlice({
     balance: FULL_BALANCE,
     allBets: POSITIONS,
     totalBet: 0,
-    wonAmount: 0,
+    wonValue: 0,
   },
   reducers: {
     addBet: (state, { payload }: { payload: number }) => {
@@ -26,16 +26,17 @@ const betSlice = createSlice({
     },
     increaseBalance: (state, { payload }: { payload: { numberOfBets: number; totalValueOfBets: number } }) => {
       if (payload.numberOfBets === BET_ON_ONE) {
-        state.wonAmount = payload.totalValueOfBets * BET_ODDS;
+        state.wonValue = payload.totalValueOfBets * BET_ODDS;
         state.balance = state.balance + payload.totalValueOfBets * BET_ODDS;
       }
       if (payload.numberOfBets === BET_ON_TWO) {
-        state.wonAmount = payload.totalValueOfBets * 2 + payload.totalValueOfBets;
+        state.wonValue = payload.totalValueOfBets * 2 + payload.totalValueOfBets;
         state.balance = state.balance + payload.totalValueOfBets * 2 + payload.totalValueOfBets;
       }
     },
     resetBets: (state) => {
       state.allBets = POSITIONS;
+      state.wonValue = 0;
     },
   },
 });

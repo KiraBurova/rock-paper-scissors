@@ -6,19 +6,17 @@ import styles from './styles.module.scss';
 
 export interface IHeader {
   totalValueOfBets: number;
+  wonValue: number;
 }
 
-function Header({ totalValueOfBets }: IHeader) {
+function Header({ totalValueOfBets, wonValue }: IHeader) {
   const balance = useSelector((state: RootState) => state.balance);
 
   return (
     <header className={styles.header}>
-      <div>
-        <span>Balance: {balance}</span>
-      </div>
-      <div>
-        <span>Bet: {totalValueOfBets}</span>
-      </div>
+      <span>Balance: {balance}</span>
+      <span>Bet: {totalValueOfBets}</span>
+      <span>Win: {wonValue}</span>
     </header>
   );
 }

@@ -5,13 +5,13 @@ import styles from './styles.module.scss';
 
 interface IGameStatus {
   winnerChoice: IPosition[] | null;
-  wonAmount: number;
+  wonValue: number;
   computerChoice: IPosition | null;
   notZeroBets: IPosition[];
   lost: boolean;
 }
 
-function GameStatus({ winnerChoice, computerChoice, wonAmount, notZeroBets, lost }: IGameStatus) {
+function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost }: IGameStatus) {
   if (lost) {
     return (
       <div className={styles.lossText}>
@@ -25,7 +25,7 @@ function GameStatus({ winnerChoice, computerChoice, wonAmount, notZeroBets, lost
       <div className={styles.winText}>
         <>
           <div className={styles.winnerChoice}>{winnerChoice.map((choice) => choice.name)} won</div>
-          <div>You win: {wonAmount}</div>
+          <div>You win: {wonValue}</div>
         </>
       </div>
     );
