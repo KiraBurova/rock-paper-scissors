@@ -1,0 +1,41 @@
+.position {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border: 3px solid var(--main-dark);
+  border-radius: var(--border-radius);
+  background: var(--main-light);
+  color: var(--main-light);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.rock {
+  background: var(--dark-blue);
+  border-color: var(--main-blue);
+}
+
+.paper {
+  background: var(--dark-green);
+  border-color: var(--main-green);
+}
+
+.scissors {
+  background: var(--dark-red);
+  border-color: var(--main-red);
+}
+
+.bet {
+  font-size: 0.9rem;
+  padding: 0.2em;
+  display: block;
+  border: 3px solid var(--main-blue);
+  background: var(--main-light);
+  color: var(--main-dark);
+  border-radius: 50%;
+}

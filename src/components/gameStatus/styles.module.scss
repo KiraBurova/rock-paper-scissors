@@ -1,0 +1,15 @@
+.winText,
+.lossText {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.lossText {
+  color: var(--main-red);
+}
+
+.winnerChoice {
+  color: var(--main-green);
+}
