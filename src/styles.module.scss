@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .choice {
   font-size: 2rem;
   text-transform: uppercase;
@@ -24,18 +25,26 @@
 }
 
 .button {
-  font-size: 1.2rem;
+  font-size: 2rem;
   padding: 0.8em 1.3em;
   background: var(--main-dark);
   color: var(--main-light);
   border: 2px solid var(--main-light);
   border-radius: var(--border-radius);
   cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    background: var(--main-light);
+    color: var(--main-dark);
+    border: 2px solid var(--main-dark);
+  }
 
   &:disabled {
     cursor: initial;
     background: var(--main-light);
     color: var(--main-dark);
     border: 2px solid var(--main-dark);
+    opacity: 0.5;
   }
 }
