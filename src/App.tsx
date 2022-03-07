@@ -80,10 +80,10 @@ function App() {
           ))}
         </div>
         <div>
-          <button disabled={loading || !numberOfBets} className={styles.playButton} onClick={handleStartGame}>
+          <button className={styles.playButton} disabled={loading || !numberOfBets} onClick={handleStartGame}>
             Play
           </button>
-          <button className={styles.resetButton} onClick={handleResetGame}>
+          <button className={styles.resetButton} disabled={!numberOfBets} onClick={handleResetGame}>
             Reset
           </button>
         </div>

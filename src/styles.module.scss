@@ -36,7 +36,7 @@
   cursor: pointer;
   transition: var(--transition);
 
-  &:hover {
+  &:hover:enabled {
     background: var(--main-light);
     color: var(--main-dark);
     border: 2px solid var(--main-dark);
@@ -44,9 +44,6 @@
 
   &:disabled {
     cursor: initial;
-    background: var(--main-light);
-    color: var(--main-dark);
-    border: 2px solid var(--main-dark);
     opacity: 0.5;
   }
 }
@@ -59,9 +56,13 @@
   border-radius: var(--border-radius);
   border: 2px solid var(--main-light);
 
-  &:hover {
+  &:hover:enabled {
     background: var(--main-red);
     color: var(--main-dark);
     border-radius: var(--border-radius);
+  }
+  &:disabled {
+    cursor: initial;
+    opacity: 0.5;
   }
 }
