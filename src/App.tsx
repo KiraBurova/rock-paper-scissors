@@ -46,7 +46,7 @@ function App() {
       setWinnerChoice(notZeroBets);
       setLoading(false);
       setLost(false);
-      dispatch(resetBets());
+      handleResetGame();
     }, 1000);
   };
 
@@ -55,12 +55,17 @@ function App() {
       dispatch(decreaseBalance(totalValueOfBets));
       setLost(true);
       setLoading(false);
-      dispatch(resetBets());
+      handleResetGame();
     }, 1000);
   };
 
   const handleBalanceOverflow = () => {
     setBalanceOverflow(true);
+  };
+
+  const handleResetGame = () => {
+    dispatch(resetBets());
+    setBalanceOverflow(false);
   };
 
   return (
@@ -73,9 +78,14 @@ function App() {
             <Position key={position.id} position={position} totalValueOfBets={totalValueOfBets} onBalanceOverflow={handleBalanceOverflow} />
           ))}
         </div>
-        <button disabled={loading} className={styles.button} onClick={handleStartGame}>
-          Play
-        </button>
+        <div>
+          <button disabled={loading} className={styles.playButton} onClick={handleStartGame}>
+            Play
+          </button>
+          <button className={styles.resetButton} onClick={handleResetGame}>
+            Reset
+          </button>
+        </div>
       </div>
     </div>
   );
