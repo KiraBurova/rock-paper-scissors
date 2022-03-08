@@ -8,8 +8,8 @@ import Position from './components/position';
 import { decreaseBalance, increaseBalance, resetBets, resetWonValue, RootState } from './store';
 import { getNumberOfBets, getNotZeroBets, getTotalValueOfBets } from './store/selectors';
 
-import styles from './styles.module.scss';
 import { IPosition } from './types';
+import styles from './styles.module.scss';
 
 function App() {
   const dispatch = useDispatch();
