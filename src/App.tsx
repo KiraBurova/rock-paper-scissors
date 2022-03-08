@@ -79,7 +79,7 @@ function App() {
             <Position key={position.id} position={position} totalValueOfBets={totalValueOfBets} onBalanceOverflow={handleBalanceOverflow} />
           ))}
         </div>
-        <div>
+        <div className={styles.buttonsContainer}>
           <button className={styles.playButton} disabled={loading || !numberOfBets} onClick={handleStartGame}>
             Play
           </button>

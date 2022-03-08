@@ -66,7 +66,7 @@ function GameStatus({ winnerChoice, computerChoice, wonValue, notZeroBets, lost,
     </div>;
   }
 
-  return <p>Pick your positions</p>;
+  return <p className={styles.defaultText}>Pick your positions</p>;
 }
 
 export default GameStatus;

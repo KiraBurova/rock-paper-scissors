@@ -1,5 +1,5 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
-import { BET, BET_ODDS, BET_ON_ONE, BET_ON_TWO, FULL_BALANCE, POSITIONS } from '../constants';
+import { BET, BET_ODDS, BET_VARIANT_ONE, BET_VARIANT_TWO, FULL_BALANCE, POSITIONS } from '../constants';
 
 const betSlice = createSlice({
   name: 'bets',
@@ -25,11 +25,11 @@ const betSlice = createSlice({
       }
     },
     increaseBalance: (state, { payload }: { payload: { numberOfBets: number; totalValueOfBets: number } }) => {
-      if (payload.numberOfBets === BET_ON_ONE) {
+      if (payload.numberOfBets === BET_VARIANT_ONE) {
         state.wonValue = payload.totalValueOfBets * BET_ODDS;
         state.balance = state.balance + payload.totalValueOfBets * BET_ODDS;
       }
-      if (payload.numberOfBets === BET_ON_TWO) {
+      if (payload.numberOfBets === BET_VARIANT_TWO) {
         state.wonValue = payload.totalValueOfBets * 2 + payload.totalValueOfBets;
         state.balance = state.balance + payload.totalValueOfBets * 2 + payload.totalValueOfBets;
       }

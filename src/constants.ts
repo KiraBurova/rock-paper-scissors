@@ -6,9 +6,9 @@ export const POSITIONS = [
 
 export const BET = 500;
 export const FULL_BALANCE = 5000;
-export const MAX_BET = 1000;
+export const MAX_BET = 500;
 
-export const BET_ON_ONE = 1;
-export const BET_ON_TWO = 2;
+export const BET_VARIANT_ONE = 1;
+export const BET_VARIANT_TWO = 2;
 
-export const BET_ODDS = 14
+export const BET_ODDS = 14;

@@ -14,9 +14,16 @@ function Header({ totalValueOfBets, wonValue }: IHeader) {
 
   return (
     <header className={styles.header}>
-      <span>Balance: {balance}</span>
-      <span>Bet: {totalValueOfBets}</span>
-      <span>Win: {wonValue}</span>
+      <span>
+        <span className={styles.indicator}>Balance:&nbsp;</span>
+        {balance}
+      </span>
+      <span>
+        <span className={styles.indicator}>Bet:&nbsp;</span> {totalValueOfBets}
+      </span>
+      <span>
+        <span className={styles.indicator}>Win:&nbsp;</span> {wonValue}
+      </span>
     </header>
   );
 }
