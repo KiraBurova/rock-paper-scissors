@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import GameStatus from './components/gameStatus'
+import GameStatus from './components/GameStatus'
 import Header from './components/header'
 
 import Position from './components/position'
