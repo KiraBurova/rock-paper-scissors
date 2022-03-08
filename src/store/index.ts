@@ -25,10 +25,12 @@ const betSlice = createSlice({
       }
     },
     increaseBalance: (state, { payload }: { payload: { numberOfBets: number; totalValueOfBets: number } }) => {
+      // if user picked one choice - 14 * bet
       if (payload.numberOfBets === BET_VARIANT_ONE) {
         state.wonValue = payload.totalValueOfBets * BET_ODDS;
         state.balance = state.balance + payload.totalValueOfBets * BET_ODDS;
       }
+      // if user picked two - 2:1 * bet
       if (payload.numberOfBets === BET_VARIANT_TWO) {
         state.wonValue = payload.totalValueOfBets * 2 + payload.totalValueOfBets;
         state.balance = state.balance + payload.totalValueOfBets * 2 + payload.totalValueOfBets;

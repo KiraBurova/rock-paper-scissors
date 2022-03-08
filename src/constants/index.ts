@@ -4,9 +4,8 @@ export const POSITIONS = [
   { id: 3, name: 'scissors', bet: 0 },
 ];
 
-export const BET = 500;
+// export const BET = 500;
 export const FULL_BALANCE = 5000;
-export const MAX_BET = 500;
 
 export const BET_VARIANT_ONE = 1;
 export const BET_VARIANT_TWO = 2;

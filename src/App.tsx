@@ -4,7 +4,6 @@ import GameStatus from './components/gameStatus';
 import Header from './components/header';
 
 import Position from './components/position';
-import { POSITIONS } from './constants';
 
 import { decreaseBalance, increaseBalance, resetBets, resetWonValue, RootState } from './store';
 import { getNumberOfBets, getNotZeroBets, getTotalValueOfBets } from './store/selectors';
