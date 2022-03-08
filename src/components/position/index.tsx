@@ -1,34 +1,34 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { RootState, addBet } from '../../store';
-import { IPosition } from '../../types';
+import { RootState, addBet } from '../../store'
+import { IPosition } from '../../types'
 
-import styles from './styles.module.scss';
+import styles from './styles.module.scss'
 
 export interface IPositionProps {
-  position: IPosition;
-  totalValueOfBets: number;
-  onBalanceOverflow: Function;
+    position: IPosition
+    totalValueOfBets: number
+    onBalanceOverflow: Function
 }
 
 function Position({ position, totalValueOfBets, onBalanceOverflow }: IPositionProps) {
-  const dispatch = useDispatch();
-  const balance = useSelector((state: RootState) => state.balance);
+    const dispatch = useDispatch()
+    const balance = useSelector((state: RootState) => state.balance)
 
-  const handleAddBet = (id: number) => () => {
-    if (totalValueOfBets < balance) {
-      dispatch(addBet(id));
-    } else {
-      onBalanceOverflow();
+    const handleAddBet = (id: number) => () => {
+        if (totalValueOfBets < balance) {
+            dispatch(addBet(id))
+        } else {
+            onBalanceOverflow()
+        }
     }
-  };
-  return (
-    <div className={`${styles.position} ${styles[position.name]}`} onClick={handleAddBet(position.id)}>
-      {!!position.bet && <span className={styles.bet}>{position.bet}</span>}
-      {position.name}
-    </div>
-  );
+    return (
+        <div className={`${styles.position} ${styles[position.name]}`} onClick={handleAddBet(position.id)}>
+            {!!position.bet && <span className={styles.bet}>{position.bet}</span>}
+            {position.name}
+        </div>
+    )
 }
 
-export default Position;
+export default Position

@@ -1,24 +1,24 @@
 .winText,
 .lossText {
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .lossText {
-  color: var(--main-red);
+    color: var(--main-red);
 }
 
 .winnerChoice {
-  color: var(--main-green);
+    color: var(--main-green);
 }
 
 .defaultText {
-  color: var(--accent);
-  font-size: 1.1rem;
+    color: var(--accent);
+    font-size: 1.1rem;
 }
 
 .wonAmountText {
-  color: var(--accent);
+    color: var(--accent);
 }

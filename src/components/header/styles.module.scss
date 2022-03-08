@@ -1,14 +1,14 @@
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  font-size: 1rem;
-  padding: 1em;
-  background: var(--main-dark);
-  color: var(--main-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-size: 1rem;
+    padding: 1em;
+    background: var(--main-dark);
+    color: var(--main-light);
 }
 
 .indicator {
-  color: var(--accent);
+    color: var(--accent);
 }

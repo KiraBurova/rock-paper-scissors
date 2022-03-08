@@ -1,46 +1,46 @@
 .position {
-  width: 250px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  border: 3px solid var(--main-dark);
-  border-radius: var(--border-radius);
-  background: var(--main-light);
-  color: var(--main-light);
-  font-size: 2.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: var(--transition);
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    border: 3px solid var(--main-dark);
+    border-radius: var(--border-radius);
+    background: var(--main-light);
+    color: var(--main-light);
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
 
-  &:hover {
-    transform: scale(1.1);
-  }
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .rock {
-  background: var(--dark-blue);
-  border-color: var(--main-blue);
+    background: var(--dark-blue);
+    border-color: var(--main-blue);
 }
 
 .paper {
-  background: var(--dark-green);
-  border-color: var(--main-green);
+    background: var(--dark-green);
+    border-color: var(--main-green);
 }
 
 .scissors {
-  background: var(--dark-red);
-  border-color: var(--main-red);
+    background: var(--dark-red);
+    border-color: var(--main-red);
 }
 
 .bet {
-  font-size: 1.1rem;
-  padding: 0.2em;
-  display: block;
-  border: 3px solid var(--main-blue);
-  background: var(--main-light);
-  color: var(--main-dark);
-  border-radius: 50%;
+    font-size: 1.1rem;
+    padding: 0.2em;
+    display: block;
+    border: 3px solid var(--main-blue);
+    background: var(--main-light);
+    color: var(--main-dark);
+    border-radius: 50%;
 }
